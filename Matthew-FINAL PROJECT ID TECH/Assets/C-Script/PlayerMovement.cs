@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public int speed = 200;
-    public int jumpForce = 7;
+    public int jumpForce = 20;
     void Start()
     {
 
@@ -36,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.right * speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.Translate(Vector3.up * jumpForce * Time.deltaTime);
         }
     }
 }
