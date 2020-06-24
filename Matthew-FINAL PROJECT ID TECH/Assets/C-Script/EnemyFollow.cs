@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyFollow : MonoBehaviour
 {
     public GameObject player;
-    float speed = 4;
+    public float speed = 4;
     float radius = 5;
 
     // Use this for initialization
@@ -21,7 +21,7 @@ public class EnemyFollow : MonoBehaviour
         transform.LookAt(player.transform);
         if (Vector3.Distance(transform.position, player.transform.position) <= radius)
         {
-            transform.Translate(Vector3.down * speed * Time.deltaTime);
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
     }
 }
