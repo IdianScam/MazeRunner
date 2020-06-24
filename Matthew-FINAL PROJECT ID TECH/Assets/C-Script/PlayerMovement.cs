@@ -1,13 +1,14 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int speed = 200;
+    public int speed = 20;
     Rigidbody rb;
-    float jumpForce = 50.0f;
+    float jumpForce = 75.0f;
     bool jumping = false;
     void Start()
     {
@@ -35,10 +36,17 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && jumping == false)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jumping = true;
+        }
+    }
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            jumping = false;
         }
     }
 }
