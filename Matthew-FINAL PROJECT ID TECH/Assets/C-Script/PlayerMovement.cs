@@ -6,21 +6,19 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public int speed = 200;
-    public int jumpForce = 20;
+    Rigidbody rb;
+    float jumpForce = 50.0f;
+    bool jumping = false;
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
         float mouseInput = Input.GetAxis("Mouse X");
-
         Vector3 lookhere = new Vector3(0, mouseInput, 0);
-
-        transform.Rotate(lookhere);
-
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
@@ -37,9 +35,10 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
-            transform.Translate(Vector3.up * jumpForce * Time.deltaTime);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            jumping = true;
         }
     }
 }
