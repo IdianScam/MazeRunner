@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Floor"))
         {
             jumping = false;
             Debug.Log("jumping=false");
