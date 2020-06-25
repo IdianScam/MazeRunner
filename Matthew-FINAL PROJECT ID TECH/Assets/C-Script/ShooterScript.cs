@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShooterScript : MonoBehaviour
 {
-    public GameObject bullet;
+    public GameObject Arrow;
     public bool canShoot;
     public float timeBetweenShots = 1;
     private float timeUntilNextShot;
@@ -24,7 +24,7 @@ public class ShooterScript : MonoBehaviour
         {
             canShoot = false;
             timeUntilNextShot = Time.time + timeBetweenShots;
-            Instantiate(bullet, this.transform.position, this.transform.rotation);
+            Instantiate(Arrow, this.transform.position, this.transform.rotation);
         }
     }
 }

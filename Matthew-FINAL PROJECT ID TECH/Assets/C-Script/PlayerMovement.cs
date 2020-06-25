@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     public int speed = 20;
     Rigidbody rb;
-    float jumpForce = 75.0f;
+    public float jumpForce = 80.0f;
     bool jumping = false;
     void Start()
     {
