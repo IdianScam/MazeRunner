@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -41,10 +43,15 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jumping = true;
         }
+        if (Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene("Bella");
+
+        }
     }
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Floor"))
         {
             jumping = false;
             Debug.Log("jumping=false");
