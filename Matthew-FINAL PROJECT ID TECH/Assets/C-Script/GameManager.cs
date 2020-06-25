@@ -15,12 +15,12 @@ public class GameManager : MonoBehaviour
     public int score = 100;
     float timer = 30;
     public GameObject gameOverMenu;
-    public GameObject IntroGameMenu;
+    
     // Start is called before the first frame update
     void Start()
     {
         gameOverMenu.SetActive(true);
-        IntroGameMenu.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -39,13 +39,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Bella");
 
     }
-    public void CloseMenu()
-    {
-        IntroGameMenu.SetActive(false);
-    }
-    public void OpenMenu()
-    {
-        IntroGameMenu.SetActive(true);
-    }
+ 
 
 }
