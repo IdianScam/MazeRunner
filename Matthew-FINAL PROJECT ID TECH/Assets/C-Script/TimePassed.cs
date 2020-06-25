@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TimePassed : MonoBehaviour
 {
-    private float spawnTimer = 10.0f;
+    private float spawnTimer = 30.0f;
     public Text time;
     // Start is called before the first frame update
     void Start()
@@ -26,4 +26,5 @@ public class TimePassed : MonoBehaviour
         
 
     }
+    
 }
