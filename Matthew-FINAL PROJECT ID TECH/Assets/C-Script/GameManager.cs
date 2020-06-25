@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Button was pressed!");
         gameOverMenu.SetActive(false);
-        SceneManager.LoadScene("Bella");
+        SceneManager.LoadScene("Mathew");
 
     }
  
