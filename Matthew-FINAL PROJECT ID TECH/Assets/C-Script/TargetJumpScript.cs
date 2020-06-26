@@ -26,10 +26,13 @@ public class TargetJumpScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Destroy(Target);
+            Debug.Log("Test");
             for (timer = 5; timer > 0; timer--) {
 
                 float jumpForce = 100.0f;
                 bool jumping = true;
+
+               
             }
         }
     }
